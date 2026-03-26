@@ -138,13 +138,9 @@
 
     <div id="overlay" onclick="toggleMenu()"></div>
 
-    <!-- SIDEBAR -->
     <aside id="sidebar" class="fixed top-0 left-0 h-full w-72 bg-black border-r border-zinc-900 p-6 flex flex-col sidebar-closed lg:relative lg:sidebar-open lg:transform-none">
         <div class="mb-10 text-center">
-            <!-- Ícone Master Importados -->
-            <div class="w-24 h-24 mx-auto mb-4 bg-[#D4AF37] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(212,175,55,0.3)]">
-                <i class="fas fa-crown text-black text-4xl"></i>
-            </div>
+            <img src="https://herodotosouza.github.io/M-sterImportados/image.png" alt="Logo Master Importados" class="w-24 h-24 mx-auto mb-4 rounded-full border-2 border-[#D4AF37] object-cover shadow-[0_0_15px_rgba(212,175,55,0.2)]">
             <h2 class="text-[12px] font-bold tracking-[0.2em] text-[#D4AF37] uppercase">Master Importados</h2>
             <p class="text-[8px] text-zinc-600 tracking-widest mt-1">PREMIUM CONTROL</p>
         </div>
@@ -181,7 +177,6 @@
     </aside>
 
     <div class="flex-1 flex flex-col min-w-0">
-        <!-- HEADER MOBILE -->
         <header class="h-16 flex items-center justify-between px-6 lg:hidden fixed top-0 left-0 right-0 z-[800] bg-black border-b border-zinc-900">
             <button onclick="toggleMenu()" class="text-xl text-zinc-400 p-2">
                 <i class="fas fa-bars"></i>
@@ -192,7 +187,6 @@
 
         <main class="flex-1 p-4 lg:p-10 pt-20 lg:pt-10 overflow-y-auto">
             
-            <!-- DASHBOARD -->
             <section id="section-dashboard" class="content-section active">
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                     <div class="master-card p-5 border-l-4 border-blue-500">
@@ -231,7 +225,6 @@
                 </div>
             </section>
 
-            <!-- MEUS PRODUTOS (GESTÃO) -->
             <section id="section-products" class="content-section">
                 <div class="flex justify-between items-center mb-6">
                     <h1 class="text-xl font-bold">Meus Produtos</h1>
@@ -240,11 +233,9 @@
                     </button>
                 </div>
                 <div id="products-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <!-- Cards de produtos serão inseridos aqui -->
-                </div>
+                    </div>
             </section>
 
-            <!-- CATEGORIAS -->
             <section id="section-categories" class="content-section">
                 <div class="max-w-md mx-auto space-y-6">
                     <h1 class="text-xl font-bold">Gestão de Categorias</h1>
@@ -256,7 +247,6 @@
                 </div>
             </section>
 
-            <!-- NOVO PRODUTO -->
             <section id="section-register" class="content-section">
                 <div class="max-w-md mx-auto space-y-6">
                     <h1 class="text-xl font-bold text-center">Cadastro de Aparelho</h1>
@@ -273,7 +263,6 @@
                 </div>
             </section>
 
-            <!-- ENTRADA -->
             <section id="section-entry" class="content-section">
                 <div class="max-w-md mx-auto space-y-6">
                     <h1 class="text-xl font-bold text-emerald-500">Reposição de Estoque</h1>
@@ -285,7 +274,6 @@
                 </div>
             </section>
 
-            <!-- VENDA -->
             <section id="section-exit" class="content-section">
                 <div class="max-w-md mx-auto space-y-6">
                     <h1 class="text-xl font-bold text-rose-500">Baixa de Venda</h1>
@@ -297,7 +285,6 @@
                 </div>
             </section>
 
-            <!-- HISTÓRICO -->
             <section id="section-history" class="content-section">
                 <h1 class="text-xl font-bold mb-6">Histórico de Atividade</h1>
                 <div id="history-container" class="space-y-3 max-w-lg mx-auto lg:mx-0"></div>
@@ -306,7 +293,6 @@
         </main>
     </div>
 
-    <!-- MODAL EDITAR PRODUTO -->
     <div id="edit-prod-modal" class="modal-container">
         <div class="master-card p-6 w-full max-w-sm space-y-4 border border-zinc-800 shadow-2xl">
             <h2 class="text-lg font-bold flex items-center gap-2">
@@ -338,7 +324,6 @@
         </div>
     </div>
 
-    <!-- MODAL EDITAR CATEGORIA -->
     <div id="edit-cat-modal" class="modal-container">
         <div class="master-card p-6 w-full max-w-sm space-y-4 border border-zinc-800">
             <h2 class="text-lg font-bold">Editar Categoria</h2>
@@ -350,7 +335,6 @@
         </div>
     </div>
 
-    <!-- TOAST -->
     <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 lg:left-auto lg:right-6 lg:translate-x-0 w-[90%] lg:w-72 bg-white text-black p-4 rounded-xl shadow-2xl transition-all duration-300 opacity-0 translate-y-10 z-[3000] border-l-8 border-[#D4AF37]">
         <p id="toast-msg" class="font-bold text-[11px] text-center"></p>
     </div>
@@ -546,7 +530,7 @@
             const opts = '<option value="">Selecionar...</option>' + state.products.map(p => `<option value="${p.id}">${p.name} (${p.qty})</option>`).join('');
             document.getElementById('entry-prod').innerHTML = opts;
             document.getElementById('exit-prod').innerHTML = opts;
- 
+
             // Histórico
             document.getElementById('history-container').innerHTML = state.history.slice(0, 15).map(h => `
                 <div class="master-card p-4 flex justify-between border-l-4 ${h.type === 'in' ? 'border-emerald-500' : 'border-rose-500'}">
